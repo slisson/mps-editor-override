@@ -23,6 +23,7 @@
       <modulePath path="${project}/languages/demolang/demolang.mpl" folder="" />
       <modulePath path="${project}/languages/override/override.mpl" />
       <modulePath path="${project}/solutions/de.slisson.mps.editor.override.sandbox/de.slisson.mps.editor.override.sandbox.msd" />
+      <modulePath path="${project}/solutions/mps-editor-override.build/build.msd" />
     </projectModules>
     <genConfs />
   </component>
