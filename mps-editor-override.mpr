@@ -22,7 +22,6 @@
     <projectModules>
       <modulePath path="${project}/languages/demolang/demolang.mpl" folder="" />
       <modulePath path="${project}/languages/override/override.mpl" />
-      <modulePath path="${project}/solutions/de.slisson.mps.editor.override.runtime/runtime.msd" folder="" />
       <modulePath path="${project}/solutions/de.slisson.mps.editor.override.sandbox/de.slisson.mps.editor.override.sandbox.msd" />
     </projectModules>
     <genConfs />
@@ -35,7 +34,7 @@
     <option name="version" value="2.5" />
   </component>
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="Git" />
   </component>
 </project>
 
