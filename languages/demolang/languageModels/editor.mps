@@ -16,6 +16,13 @@
       <property name="name" nameId="tpck.1169194664001" value="Override_LocalVariableDeclaration" />
       <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1068581242863" resolveInfo="LocalVariableDeclaration" />
     </node>
+    <node type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="7723076858040746465">
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="1fx4.7723076858040746464" resolveInfo="A" />
+    </node>
+    <node type="tpc2.EditorComponentDeclaration" typeId="tpc2.1078938745671" id="7723076858040751897">
+      <property name="name" nameId="tpck.1169194664001" value="Override_IntegerLiteral" />
+      <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tpee.1179362310214" resolveInfo="IntegerLiteral" />
+    </node>
   </roots>
   <root id="3288623309767656276">
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="3243791582960089279">
@@ -78,6 +85,30 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1068431790190" />
       </node>
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="3435336274377448452" />
+    </node>
+  </root>
+  <root id="7723076858040746465">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="158g.CellModel_OverrideContainer" typeId="158g.3288623309767656239" id="7723076858040746467">
+      <node role="body" roleId="158g.1198489993734" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="7723076858040746469">
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7723076858040746472">
+          <property name="text" nameId="tpc2.1073389577007" value="test" />
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutNewLineStyleClassItem" typeId="tpc2.1237308012275" id="7723076858040748092">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+          <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.IndentLayoutIndentStyleClassItem" typeId="tpc2.1237307900041" id="7723076858040748094">
+            <property name="flag" nameId="tpc2.1186414551515" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7723076858040748091">
+          <property name="text" nameId="tpc2.1073389577007" value="abc" />
+        </node>
+        <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="7723076858040746471" />
+      </node>
+    </node>
+  </root>
+  <root id="7723076858040751897">
+    <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="7723076858040751900">
+      <property name="text" nameId="tpc2.1073389577007" value="integer" />
     </node>
   </root>
 </model>
