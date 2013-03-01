@@ -22,10 +22,10 @@
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}" />
-    <mkdir dir="${build.tmp}/default/mps-editor-override-1.0.zip" />
-    <mkdir dir="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override" />
-    <mkdir dir="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override/META-INF" />
-    <echoxml file="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override/META-INF/plugin.xml">
+    <mkdir dir="${build.tmp}/default/mps-editor-override.zip" />
+    <mkdir dir="${build.tmp}/default/mps-editor-override.zip/mps-editor-override" />
+    <mkdir dir="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/META-INF" />
+    <echoxml file="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.slisson.mps.editor.override</id>
         <name>MPS Editor Override</name>
@@ -38,8 +38,8 @@
         </extensions>
       </idea-plugin>
     </echoxml>
-    <mkdir dir="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override/languages" />
-    <mkdir dir="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override/languages/mps-editor-override" />
+    <mkdir dir="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages" />
+    <mkdir dir="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override" />
     <mkdir dir="${build.tmp}/default/de.slisson.mps.editor.override.jar" />
     <mkdir dir="${build.tmp}/default/de.slisson.mps.editor.override.jar/META-INF" />
     <echoxml file="${build.tmp}/default/de.slisson.mps.editor.override.jar/META-INF/module.xml">
@@ -58,19 +58,19 @@
         <sources jar="de.slisson.mps.editor.override-src.jar" descriptor="override.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override/languages/mps-editor-override/de.slisson.mps.editor.override.jar">
+    <jar destfile="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/de.slisson.mps.editor.override.jar">
       <fileset dir="${build.tmp}/java/out/de.slisson.mps.editor.override" />
       <fileset dir="${basedir}/languages/override" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/de.slisson.mps.editor.override.jar" />
     </jar>
-    <jar destfile="${build.tmp}/default/mps-editor-override-1.0.zip/mps-editor-override/languages/mps-editor-override/de.slisson.mps.editor.override-src.jar">
+    <jar destfile="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/de.slisson.mps.editor.override-src.jar">
       <fileset dir="${basedir}/languages/override/source_gen" includes="**/*.java" />
       <zipfileset file="${basedir}/languages/override/override.mpl" prefix="module" />
       <zipfileset dir="${basedir}/languages/override/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${basedir}/languages/override/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
-    <zip destfile="${build.layout}/mps-editor-override-1.0.zip">
-      <fileset dir="${build.tmp}/default/mps-editor-override-1.0.zip" />
+    <zip destfile="${build.layout}/mps-editor-override.zip">
+      <fileset dir="${build.tmp}/default/mps-editor-override.zip" />
     </zip>
     <echo file="${build.layout}/build.properties">buildMPS.build.number=${buildMPS.build.number}${line.separator}buildMPS.date=${buildMPS.date}${line.separator}buildMPS.build.vcs.number=${buildMPS.build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${buildMPS.teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${buildMPS.idea.platform.build.number}${line.separator}buildCore.version=${buildCore.version}</echo>
   </target>
