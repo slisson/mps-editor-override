@@ -32,6 +32,7 @@
         <version>1.0</version>
         <vendor url="http://github.com/slisson/mps-editor-override">Sascha Lisson</vendor>
         <depends>jetbrains.mps.core</depends>
+        <depends>jetbrains.mps.build</depends>
         
         <extensions defaultExtensionNs="com.intellij">
           <mps.LanguageLibrary dir="/languages" />
@@ -40,6 +41,24 @@
     </echoxml>
     <mkdir dir="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages" />
     <mkdir dir="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override" />
+    <mkdir dir="${build.tmp}/default/mps-editor-override.build.jar" />
+    <mkdir dir="${build.tmp}/default/mps-editor-override.build.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/mps-editor-override.build.jar/META-INF/module.xml">
+      <module namespace="mps-editor-override.build" type="solution" uuid="987f5d3d-4c3c-4c70-86a5-cb2821e99b49">
+        <dependencies />
+        <sources jar="mps-editor-override.build-src.jar" descriptor="build.msd" />
+      </module>
+    </echoxml>
+    <jar destfile="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/mps-editor-override.build.jar">
+      <fileset dir="${build.tmp}/java/out/mps-editor-override.build" />
+      <fileset dir="${basedir}/solutions/mps-editor-override.build" includes="icons/**, resources/**" />
+      <fileset dir="${build.tmp}/default/mps-editor-override.build.jar" />
+    </jar>
+    <jar destfile="${build.tmp}/default/mps-editor-override.zip/mps-editor-override/languages/mps-editor-override/mps-editor-override.build-src.jar">
+      <fileset dir="${basedir}/solutions/mps-editor-override.build/source_gen" includes="**/*.java" />
+      <zipfileset file="${basedir}/solutions/mps-editor-override.build/build.msd" prefix="module" />
+      <zipfileset dir="${basedir}/solutions/mps-editor-override.build/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+    </jar>
     <mkdir dir="${build.tmp}/default/de.slisson.mps.editor.override.jar" />
     <mkdir dir="${build.tmp}/default/de.slisson.mps.editor.override.jar/META-INF" />
     <echoxml file="${build.tmp}/default/de.slisson.mps.editor.override.jar/META-INF/module.xml">
@@ -84,7 +103,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.de.slisson.mps.editor.override" />
+  <target name="compileJava" depends="java.compile.mps-editor-override.build, java.compile.de.slisson.mps.editor.override" />
   
   <target name="processResources" />
   
@@ -93,6 +112,17 @@
   <target name="test" depends="classes" />
   
   <target name="check" depends="test" />
+  
+  <target name="java.compile.mps-editor-override.build">
+    <mkdir dir="${build.tmp}/java/out/mps-editor-override.build" />
+    <javac destdir="${build.tmp}/java/out/mps-editor-override.build" fork="true" includeantruntime="false">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${basedir}/solutions/mps-editor-override.build/source_gen" />
+      </src>
+      <classpath />
+    </javac>
+  </target>
   
   <target name="java.compile.de.slisson.mps.editor.override" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.editor.override" />
@@ -145,6 +175,7 @@
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
     <generate parallelMode="true" fork="true">
+      <plugin path="${artifacts.buildMPS}/plugins/mps-build" />
       <library file="${artifacts.buildMPS}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.buildMPS}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.buildMPS}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -195,13 +226,21 @@
       <library file="${artifacts.buildMPS}/lib/mps-editor.jar" />
       <library file="${artifacts.buildMPS}/lib/mps-platform.jar" />
       <library file="${artifacts.buildMPS}/lib/mps-tuples.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.build.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
+      <library file="${artifacts.buildMPS}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
       <chunk>
         <module file="${basedir}/languages/override/override.mpl" />
+        <module file="${basedir}/solutions/mps-editor-override.build/build.msd" />
       </chunk>
     </generate>
   </target>
   
   <target name="cleanSources">
     <delete dir="${basedir}/languages/override/source_gen" />
+    <delete dir="${basedir}/solutions/mps-editor-override.build/source_gen" />
   </target>
 </project>
