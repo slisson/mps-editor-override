@@ -20,10 +20,10 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/demolang/demolang.mpl" folder="" />
-      <modulePath path="${project}/languages/override/override.mpl" />
-      <modulePath path="${project}/solutions/de.slisson.mps.editor.override.sandbox/de.slisson.mps.editor.override.sandbox.msd" />
-      <modulePath path="${project}/solutions/mps-editor-override.build/build.msd" />
+      <modulePath path="$PROJECT_DIR$/languages/demolang/demolang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/override/override.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.editor.override.sandbox/de.slisson.mps.editor.override.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/mps-editor-override.build/build.msd" folder="" />
     </projectModules>
     <genConfs />
   </component>
@@ -32,7 +32,7 @@
   </component>
   <component name="ProjectRootManager" version="2" />
   <component name="ProjectVersion">
-    <option name="version" value="2.5" />
+    <option name="version" value="3.0" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
