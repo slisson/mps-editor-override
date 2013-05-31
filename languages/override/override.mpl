@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="de.slisson.mps.editor.override" uuid="40f013bd-da2a-4fad-a7b5-947d40d9bf75">
+<language namespace="de.slisson.mps.editor.override" uuid="40f013bd-da2a-4fad-a7b5-947d40d9bf75" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
@@ -58,6 +58,9 @@
   <usedDevKits>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
   </usedDevKits>
+  <runtime>
+    <dependency reexport="false">498d89d2-c2e9-11e2-ad49-6cf049e62fe5(MPS.IDEA)</dependency>
+  </runtime>
   <extendedLanguages>
     <extendedLanguage>18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)</extendedLanguage>
   </extendedLanguages>
