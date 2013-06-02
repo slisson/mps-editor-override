@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="de.slisson.mps.editor.override.demolang" uuid="ae8a6aa7-f48f-41b2-97a9-78b9316c37e1">
+<language namespace="de.slisson.mps.editor.override.demolang" uuid="ae8a6aa7-f48f-41b2-97a9-78b9316c37e1" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="languageModels" />
+      <sourceRoot path="${module}/languageModels" />
     </modelRoot>
   </models>
   <accessoryModels />

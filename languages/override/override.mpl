@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="de.slisson.mps.editor.override" uuid="40f013bd-da2a-4fad-a7b5-947d40d9bf75">
+<language namespace="de.slisson.mps.editor.override" uuid="40f013bd-da2a-4fad-a7b5-947d40d9bf75" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="languageModels" />
