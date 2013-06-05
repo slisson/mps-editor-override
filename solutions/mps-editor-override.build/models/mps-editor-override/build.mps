@@ -183,6 +183,9 @@
             </node>
           </node>
         </node>
+        <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="1968073902225259432" nodeInfo="ng">
+          <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="ffeo.1480008320050917282" resolveInfo="MPS.IDEA" />
+        </node>
       </node>
     </node>
   </root>
