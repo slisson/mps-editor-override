@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/demolang/demolang.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/override/override.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.editor.override.sandbox/de.slisson.mps.editor.override.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/mps-editor-override.build/build.msd" folder="" />
+    </projectModules>
+    <genConfs />
+  </component>
+</project>
+
