@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="de.slisson.mps.editor.override.demolang" uuid="ae8a6aa7-f48f-41b2-97a9-78b9316c37e1" doNotGenerateAdapters="true">
+<language namespace="de.slisson.mps.editor.override.demolang" uuid="ae8a6aa7-f48f-41b2-97a9-78b9316c37e1">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators />
