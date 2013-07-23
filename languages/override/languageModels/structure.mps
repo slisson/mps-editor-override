@@ -58,5 +58,11 @@
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="editorCell" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2048801446769834016" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="postprocessor" />
+    <property name="name" nameId="tpck.1169194664001" value="EditorContextParameter" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="editorContext" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
+  </root>
 </model>
 
