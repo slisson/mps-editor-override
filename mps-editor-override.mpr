@@ -25,7 +25,6 @@
       <modulePath path="$PROJECT_DIR$/solutions/de.slisson.mps.editor.override.sandbox/de.slisson.mps.editor.override.sandbox.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/mps-editor-override.build/build.msd" folder="" />
     </projectModules>
-    <genConfs />
   </component>
   <component name="ProjectModuleManager">
     <modules />
