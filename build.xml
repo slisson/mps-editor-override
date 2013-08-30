@@ -198,6 +198,9 @@
         <module file="${basedir}/languages/override/override.mpl" />
         <module file="${basedir}/solutions/mps-editor-override.build/build.msd" />
       </chunk>
+      <jvmargs>
+        <arg value="-Xmx512m" />
+      </jvmargs>
     </generate>
   </target>
   
@@ -208,6 +211,7 @@
   <target name="makeDependents" />
   
   <target name="java.compile.mps-editor-override.build">
+    <mkdir dir="${basedir}/solutions/mps-editor-override.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mps-editor-override.build" />
     <javac destdir="${build.tmp}/java/out/mps-editor-override.build" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -219,6 +223,7 @@
   </target>
   
   <target name="java.compile.de.slisson.mps.editor.override" depends="fetchDependencies">
+    <mkdir dir="${basedir}/languages/override/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.editor.override" />
     <javac destdir="${build.tmp}/java/out/de.slisson.mps.editor.override" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
@@ -264,6 +269,7 @@
   </target>
   
   <target name="java.compile.de.slisson.mps.editor.override#3288623309767694697" depends="java.compile.de.slisson.mps.editor.override, fetchDependencies">
+    <mkdir dir="${basedir}/languages/override/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/de.slisson.mps.editor.override#3288623309767694697" />
     <javac destdir="${build.tmp}/java/out/de.slisson.mps.editor.override#3288623309767694697" fork="true" includeantruntime="false">
       <compilerarg value="-Xlint:none" />
