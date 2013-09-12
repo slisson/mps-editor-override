@@ -28,7 +28,7 @@
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>de.slisson.mps.editor.override</id>
         <name>MPS Editor Override</name>
-        <version>1.0</version>
+        <version>2.0</version>
         <vendor url="http://github.com/slisson/mps-editor-override">Sascha Lisson</vendor>
         <depends>jetbrains.mps.core</depends>
         <depends>jetbrains.mps.build</depends>
